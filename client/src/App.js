@@ -1,12 +1,12 @@
 import './App.css';
 import {useEffect, useState} from 'react';
+import axios from 'axios';
 function App() {
   const [data,setData] = useState("");
   useEffect(()=>{
-    fetch('http://localhost:4000')
-    .then(res => res.json())
-    .then(res => {
-      setData(res);
+    axios.get("/api")
+    .then(res=>{
+      setData(res.data)
     })
   },[])
   return (

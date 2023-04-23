@@ -6,7 +6,7 @@ services:
       - client
     restart: always
     build: 
-      context: ./nginx
+      context: ./Nginx
       dockerfile: Dockerfile
     ports:
       - "3050:80"
@@ -15,8 +15,6 @@ services:
     build: 
       context: ./server
       dockerfile: Dockerfile
-    ports:
-      - "4000:4000"
     volumes:
       - /app/node_modules
       - ./server:/app
